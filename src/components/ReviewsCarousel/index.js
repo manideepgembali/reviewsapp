@@ -38,11 +38,11 @@ class ReviewsCarousel extends Component {
     // const {imgUrl, username, companyName, description} = reviewsList
     return (
       <div className="bg">
-        <button type="button">
+        <button type="button" onClick={this.onClickLeftArrow}  data-testid="leftArrow">
           <img
             src="https://assets.ccbp.in/frontend/react-js/left-arrow-img.png"
             alt="left arrow"
-            onClick={this.onClickLeftArrow}
+            
           />
         </button>
         <div className="card">
@@ -55,11 +55,11 @@ class ReviewsCarousel extends Component {
           <p>{reviewsList[profileNo].companyName}</p>
           <p>{reviewsList[profileNo].description}</p>
         </div>
-        <button type="button">
+        <button type="button" onClick={this.onClickRightArrow} data-testid="leftArrow">
           <img
             src="https://assets.ccbp.in/frontend/react-js/right-arrow-img.png"
             alt="right arrow"
-            onClick={this.onClickRightArrow}
+            
           />
         </button>
       </div>
