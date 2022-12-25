@@ -11,7 +11,7 @@ class ReviewsCarousel extends Component {
   onClickLeftArrow = () => {
     const {profileNo} = this.state
     if (profileNo === 0) {
-      this.setState()({
+      this.setState({
         profileNo: 0,
       })
     } else if (profileNo > 0) {
@@ -21,16 +21,14 @@ class ReviewsCarousel extends Component {
   }
 
   onClickRightArrow = () => {
-    const {profileNo} = this.state
-    if (profileNo === 3) {
-      this.setState()({
-        profileNo: 3,
-      })
-    } else if (profileNo < 3) {
-      this.setState(prevState => ({profileNo: prevState.profileNo + 1}))
-    }
-    return profileNo
+  const {profileNo} = this.state
+  const {reviewsList} = this.props
+  if (profileNo < reviewsList.length - 1) {
+   this.setState(prevState => ({
+    profileNo: prevState.profileNo + 1,
+   }))
   }
+ }
 
   render() {
     const {reviewsList} = this.props
